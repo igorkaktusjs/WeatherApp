@@ -1,10 +1,10 @@
-# 🌦️ WeatherApp
+#  WeatherApp
 
 A simple cross-platform Weather App built with **React Native CLI**, developed as a technical task for a mobile developer position.
 
 It uses the **OpenWeatherMap API** to fetch real-time weather data.
 
-## 🖼️ Screenshots
+##  Screenshots
 
 <div align="center">
   <img src="src/assets/screenshot1.png" width="250" alt="Simulator Screenshot 1" />
@@ -13,16 +13,16 @@ It uses the **OpenWeatherMap API** to fetch real-time weather data.
   <img src="src/assets/screenshot4.png" width="250" alt="Simulator Screenshot 4" />
 </div>
 
-## 🚀 Features
+##  Features
 
-- 🔍 Search weather by city name
-- 🌡️ Display current temperature, condition, and icon
-- ⚠️ Error message if the city is not found
-- 💾 Persist last searched city using `redux-persist`
-- 🌓 **Dark mode** support (implemented manually)
-- 🧹 Clean and maintainable architecture
+-  Search weather by city name
+-  Display current temperature, condition, and icon
+-  Error message if the city is not found
+-  Persist last searched city using `redux-persist`
+-  **Dark mode** support (implemented manually)
+-  Clean and maintainable architecture
 
-## 📦 Tech Stack
+##  Tech Stack
 
 - React Native CLI
 - TypeScript
@@ -30,7 +30,7 @@ It uses the **OpenWeatherMap API** to fetch real-time weather data.
 - OpenWeatherMap API
 - Jest & React Native Testing Library (unit testing)
 
-## 📁 Project Structure
+##  Project Structure
 
 <pre>
 src/
@@ -44,7 +44,7 @@ src/
 ├── types/       # TypeScript type definitions
 </pre>
 
-## 📥 Installation
+##  Installation
 
 1. **Clone the repo**:
 
@@ -89,7 +89,7 @@ npx react-native run-android
 npx react-native run-ios
 ```
 
-## ✅ Testing
+##  Testing
 
 Run unit tests with:
 
@@ -97,22 +97,22 @@ Run unit tests with:
 npm test
 ```
 
-## 🧠 Architectural Decisions
+##  Architectural Decisions
 
 - **State Management**: Redux Toolkit + redux-persist
 - **Code Structure**: Separation by responsibility: screens, components, API, store, etc.
 - **Dark Mode**: Implemented manually with state toggle and conditional styling
 - **API Integration**: Abstracted in `api/weather.ts` for reusability
 
-## 💡 Potential Improvements
+##  Potential Improvements
 
 > These ideas are not required by the task but could be beneficial for production scalability:
 
-- 🎨 Use **NativeWind** or **Restyle** for scalable styling and easier dark mode support
-- ⚡ Add animations with **Reanimated** to enhance UI/UX
-- 🔄 Use **RTK Query**, **React Query**, or **GraphQL** for efficient API state management
-- 🧪 Add end-to-end tests with **Detox**
+-  Use **NativeWind** or **Restyle** for scalable styling and easier dark mode support
+-  Add animations with **Reanimated** to enhance UI/UX
+-  Use **RTK Query**, **React Query**, or **GraphQL** for efficient API state management
+-  Add end-to-end tests with **Detox**
 
-## 📬 Contact
+##  Contact
 
 Feel free to reach out if you have any questions about the implementation!
