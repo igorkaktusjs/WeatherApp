@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { WeatherData } from '../types/weather';
 import { useThemeMode } from '../hooks/useThemeMode';
+import  InfoRow  from './InfoRow';
 
 interface WeatherCardProps {
   data: WeatherData;
@@ -9,8 +10,8 @@ interface WeatherCardProps {
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ data, getIconUrl }) => {
-  const theme = useThemeMode(); // используем текущую тему
-  const styles = getStyles(theme); // создаем стили на основе темы
+  const theme = useThemeMode();
+  const styles = getStyles(theme);
 
   const { name, sys, main, weather, wind, clouds, coord } = data;
   const condition = weather[0];
@@ -23,30 +24,15 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ data, getIconUrl }) => {
       <Text style={styles.description}>{capitalize(condition.description)}</Text>
 
       <View style={styles.infoBlock}>
-        <InfoRow label="Feels like:" value={`${Math.round(main.feels_like)}°C`} styles={styles} />
-        <InfoRow label="Humidity:" value={`${main.humidity}%`} styles={styles} />
-        <InfoRow label="Wind speed:" value={`${wind.speed} m/s`} styles={styles} />
-        <InfoRow label="Cloudiness:" value={`${clouds.all}%`} styles={styles} />
-        <InfoRow label="Coordinates:" value={`[${coord.lat}, ${coord.lon}]`} styles={styles} />
+        <InfoRow label="Feels like:" value={`${Math.round(main.feels_like)}°C`} theme={theme} />
+        <InfoRow label="Humidity:" value={`${main.humidity}%`} theme={theme} />
+        <InfoRow label="Wind speed:" value={`${wind.speed} m/s`} theme={theme} />
+        <InfoRow label="Cloudiness:" value={`${clouds.all}%`} theme={theme} />
+        <InfoRow label="Coordinates:" value={`[${coord.lat}, ${coord.lon}]`} theme={theme} />
       </View>
     </View>
   );
 };
-
-const InfoRow = ({
-  label,
-  value,
-  styles,
-}: {
-  label: string;
-  value: string;
-  styles: ReturnType<typeof getStyles>;
-}) => (
-  <View style={styles.row}>
-    <Text style={styles.label}>{label}</Text>
-    <Text style={styles.value}>{value}</Text>
-  </View>
-);
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -90,21 +76,6 @@ const getStyles = (theme: typeof import('../theme/theme').lightTheme) =>
     infoBlock: {
       width: '100%',
       marginTop: 10,
-    },
-    row: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingVertical: 4,
-      paddingHorizontal: 10,
-    },
-    label: {
-      fontSize: 16,
-      color: theme.textSecondary,
-    },
-    value: {
-      fontSize: 16,
-      fontWeight: '500',
-      color: theme.textPrimary,
     },
   });
 

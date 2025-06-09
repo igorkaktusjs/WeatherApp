@@ -1,15 +1,25 @@
 import React from 'react';
-import { TextInput, StyleSheet, TextInputProps } from 'react-native';
+import {
+  TextInput,
+  StyleSheet,
+  TextInputProps,
+  ViewStyle,
+  TextStyle,
+} from 'react-native';
 import { useThemeMode } from '../hooks/useThemeMode';
 
-const SearchInput: React.FC<TextInputProps> = props => {
+interface Props extends TextInputProps {
+  inputStyle?: TextStyle;
+}
+
+const SearchInput: React.FC<Props> = ({ inputStyle, ...props }) => {
   const theme = useThemeMode();
   const styles = getStyles(theme);
 
   return (
     <TextInput
       placeholderTextColor={theme.textSecondary}
-      style={styles.input}
+      style={[styles.input, inputStyle]}
       {...props}
     />
   );
