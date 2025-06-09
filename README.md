@@ -7,10 +7,10 @@ It uses the **OpenWeatherMap API** to fetch real-time weather data.
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="assets/screenshot1.png" width="250" alt="Simulator Screenshot 1" />
-  <img src="assets/screenshot2.png" width="250" alt="Simulator Screenshot 2" />
-  <img src="assets/screenshot3.png" width="250" alt="Simulator Screenshot 3" />
-  <img src="assets/screenshot4.png" width="250" alt="Simulator Screenshot 4" />
+  <img src="src/assets/screenshot1.png" width="250" alt="Simulator Screenshot 1" />
+  <img src="src/assets/screenshot2.png" width="250" alt="Simulator Screenshot 2" />
+  <img src="src/assets/screenshot3.png" width="250" alt="Simulator Screenshot 3" />
+  <img src="src/assets/screenshot4.png" width="250" alt="Simulator Screenshot 4" />
 </div>
 
 ## 🚀 Features
